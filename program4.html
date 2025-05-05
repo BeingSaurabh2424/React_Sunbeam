@@ -14,22 +14,17 @@
     ></script>
   </head>
   <body>
-
-    <h2>Page3</h2>
+    <h2>Page4</h2>
     <button onclick="onButtonClick()">Greet User</button>
     <div id="root"></div>
 
     <script>
         function onButtonClick(){
-            
-            const h2 = React.createElement('h2',{},'Hello User!!')
+            const h3 = React.createElement('h3',{},'Hello User!')
+            const root = ReactDOM.createRoot(document.getElementById('root'))
 
-            const root = document.getElementById('root')
-
-            ReactDOM.render(h2,root)
+            root.render(h3)
         }
     </script>
-
-
   </body>
 </html>
