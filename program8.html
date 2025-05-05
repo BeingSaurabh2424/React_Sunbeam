@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 8</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+</head>
+<body>
+    <h2>Rendering an object</h2>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const person = {
+            name: 'Saurabh',
+            age:24,
+            address:{
+                city: 'New York',
+                state: 'NYC',
+                zip: '10045'
+            },
+        }
+
+        const div = (
+            <div>
+
+                <div>Name: {person.name}</div>
+                <div>Age: {person.age}</div>
+                <div>City: {person.address.city}</div>
+                <div>State: {person.address.state}</div>
+                <div>Zip: {person.address.zip}</div>
+
+
+            </div>
+        )
+
+        ReactDOM.createRoot(document.getElementById('root')).render(div)
+    </script>
+
+    
+</body>
+</html>
