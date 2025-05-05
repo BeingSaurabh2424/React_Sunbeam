@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Page2</h1>
+
+    <button onclick="onClick()">Render Employees</button>
+    <div id="root"></div>
+
+    <script>
+
+      const persons = [
+          {
+              name : 'Saurabh Wadekar',
+              age: 24,
+              address: "Ravet",
+              email: 'swadekar@csod.com'
+          },
+          {
+              name : 'Ifrah Shaikh',
+              age: 23,
+              address: "Kalyaninagar",
+              email: 'ishaikh@csod.com'
+          },
+          {
+              name : 'Pruthviraj Deshmukh',
+              age: 23,
+              address: "Vadgaon Sheri",
+              email: 'pdeshmukh@csod.com'
+          },
+          {
+              name : 'Tejas Satam',
+              age: 28,
+              address: "Vimannagar",
+              email: 'tsatam@csod.com'
+          },
+
+      ]
+
+
+
+
+      function onClick() {
+
+          //create table header
+
+          const thead = `
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Address</th>
+                  <th>Email</th>
+              </tr>
+          </thead>
+                  `
+
+            // create the roes
+
+            let rows = ``
+            for(const person of persons){
+                rows+= `
+                <tr>
+                    <td>${person['name']} </td>
+                    <td>${person['age']}</td>
+                    <td>${person['address']}</td>
+                    <td>${person['email']}</td>
+                </tr>
+                    `
+            }
+
+            //create tbody
+
+            const tbody = `
+                <tbody>${rows} </tbody>`
+
+                
+            const table = `
+                <table border="1">
+                    ${thead}
+                    ${tbody}
+                </table> `
+
+
+            //get the object of div and render the table
+
+            document.getElementById('root').innerHTML = table
+
+      }
+    </script>
+  </body>
+</html>
